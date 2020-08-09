@@ -1,0 +1,185 @@
+{% load static from staticfiles %}
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/png">
+        <title>Edit Employee</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors/linericon/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors/owl-carousel/owl.carousel.min.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors/lightbox/simpleLightbox.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors/nice-select/css/nice-select.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors/animate-css/animate.css' %}">
+        <!-- main css -->
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    </head>
+    <body >
+
+        <!--================Header Menu Area =================-->
+        <header class="header_area">
+            <div class="main_menu">
+            	<nav class="navbar navbar-expand-lg navbar-light">
+					<div class="container box_1620">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						</a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+							<ul class="nav navbar-nav menu_nav ml-auto">
+
+
+
+
+								<li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/e_hom/">Employee Desk</a></li>
+							</ul>
+
+						</div>
+					</div>
+            	</nav>
+            </div>
+        </header>
+        <!--================Header Menu Area =================-->
+
+
+             <!--================Home Banner Area =================-->
+        <section class="home_banner_area blog_banner" >
+            <div class="banner_inner d-flex align-items-center">
+                <div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background="" style="transform: translateY(0px);"></div>
+				<div class="container">
+					<div class="blog_b_text text-center">
+                        <las class="blog_b_text text-center">
+                             <form method="post" action="{% url 'e_dit' id=dist.id %}">
+                {% csrf_token %}
+                <div align="left">
+
+
+
+                    <div align="left">
+                    <label><h6>Assigned Branch</h6></label>
+                                </div>
+                 <div class="form-group">
+
+                                    <input type="text" class="form-control" id="branch" name="out" value="{{dist.outlet}}">
+
+                                </div>
+                     <label><h6>Name</h6></label>
+                                </div>
+                 <div class="form-group">
+
+                                    <input type="text" class="form-control" id="b_name" name="name" value="{{dist.name}}">
+
+                                </div>
+                 <div align="left">
+                                    <label><h6>Date Of Birth</h6></label>
+                                </div>
+                                 <div class="form-group">
+
+                                    <input type="date" class="form-control" id="db" name="dob" value="{{dist.dob}}" required>
+
+                                </div>
+                <div align="left">
+                                    <label><h6>Gender</h6></label>
+                                </div>
+                 <div class="form-group">
+
+                                    <input type="text" class="form-control" id="gen" name="gender" value="{{dist.gender}}">
+
+                                </div>
+                <div align="left">
+                  <label><h6>Address</h6></label>
+                                </div>
+                                   <div class="form-group">
+
+                                    <input type="text" class="form-control" id="add" name="address" value="{{dist.add}}">
+
+
+                                </div>
+                <div align="left">
+                                    <label><h6>Town/City</h6></label>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="twn" name="town" value="{{dist.town}}">
+                                </div>
+                                <div align="left">
+                                    <label><h6>District</h6></label>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="dis" name="dist" value="{{dist.district}}">
+                                </div>
+                                 <div align="left">
+                                     <div align="left">
+                                    <label><h6>E-mail</h6></label>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="email" name="mail" value="{{dist.email}}">
+                                </div>
+                                    <label><h6>Mobile Number</h6></label>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="b_loc" name="phn" value="{{dist.phn}}">
+                                </div>
+
+
+
+                            <div class ="form-group">
+                                 <input type="submit"  class="btn btn-success" value="Update">
+
+
+                            </div>
+
+
+
+                             </form>
+
+
+
+
+
+
+
+
+                        </las>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!--================End Home Banner Area =================-->
+
+        <!--================Blog Categorie Area =================-->
+
+
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="{% static 'img/blog/cat-post/cat-post-3.jpg' %}"js/jquery-3.2.1.min.js"></script>
+        <script src="{% static 'img/blog/cat-post/cat-post-3.jpg' %}"js/popper.js"></script>
+        <script src="{% static 'img/blog/cat-post/cat-post-3.jpg' %}"js/bootstrap.min.js"></script>
+        <script src="{% static 'img/blog/cat-post/cat-post-3.jpg' %}"js/stellar.js"></script>
+        <script src="{% static 'img/blog/cat-post/cat-post-3.jpg' %}"vendors/lightbox/simpleLightbox.min.js"></script>
+        <script src="{% static 'img/blog/cat-post/cat-post-3.jpg' %}"vendors/nice-select/js/jquery.nice-select.min.js"></script>
+        <script src="{% static 'img/blog/cat-post/cat-post-3.jpg' %}"vendors/isotope/imagesloaded.pkgd.min.js"></script>
+        <script src="{% static 'img/blog/cat-post/cat-post-3.jpg' %}"vendors/isotope/isotope-min.js"></script>
+        <script src="{% static 'vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+        <script src="{% static 'js/mail-script.js' %}"></script>
+        <script src="{% static 'vendors/counter-up/jquery.waypoints.min.js' %}"></script>
+        <script src="{% static 'vendors/counter-up/jquery.counterup.js' %}"></script>
+        <script src="{% static 'js/theme.js' %}"></script>
+    </body>
+</html>

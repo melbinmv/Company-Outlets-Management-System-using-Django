@@ -1,0 +1,230 @@
+{% load static from staticfiles %}
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/png">
+        <title>Products Desk</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors/linericon/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors/owl-carousel/owl.carousel.min.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors/lightbox/simpleLightbox.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors/nice-select/css/nice-select.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors/animate-css/animate.css' %}">
+        <!-- main css -->
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    </head>
+    <body >
+
+        <!--================Header Menu Area =================-->
+        <header class="header_area">
+            <div class="main_menu">
+            	<nav class="navbar navbar-expand-lg navbar-light">
+					<div class="container box_1620">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<h3><font color="white">Products Desk</font></h3>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+							<ul class="nav navbar-nav menu_nav ml-auto">
+                                <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/branch_home/">Home</a></li>
+
+
+                                <li class="nav-item submenu dropdown">
+									<a href="http://127.0.0.1:8000/branch_prod" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products</a>
+									<ul class="dropdown-menu">
+										<li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/stk">View All</a></li>
+
+									</ul>
+								</li>
+                                <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/req/">Stock</a></li>
+
+
+
+                                <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/logout/">Logout</a>
+							</ul>
+
+						</div>
+					</div>
+            	</nav>
+            </div>
+        </header>
+        <!--================Header Menu Area =================-->
+
+
+             <!--================Home Banner Area =================-->
+        <section class="home_banner_area blog_banner" >
+            <div class="banner_inner d-flex align-items-center">
+                <div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background="" style="transform: translateY(0px);"></div>
+				<div class="container">
+					<div class="blog_b_text text-center">
+                        <las class="blog_b_text text-center">
+
+
+
+<div><br><br><br><br></div>
+
+                            <h3>Categories</h3>
+                            <div><br></div>
+                             <div class="row">
+                    <div class="col-lg-4">
+                        <div class="categories_post">
+                            <img src="{% static 'img/blog/cat-post/cat-post-3.jpg' %}" alt="post">
+                            <div class="categories_details">
+                                <div class="categories_text">
+                                    <a href="http://127.0.0.1:8000/smt/"><h5>Smart Phones</h5></a>
+                                    <div class="border_line"></div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                  <div class="col-lg-4">
+                        <div class="categories_post">
+                            <img src="{% static 'img/blog/cat-post/cat-post-2.jpg' %}" alt="post">
+                            <div class="categories_details">
+                                <div class="categories_text">
+                                    <a href="http://127.0.0.1:8000/elc/"><h5>Electronics</h5></a>
+                                    <div class="border_line"></div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                  <div class="col-lg-4">
+                        <div class="categories_post">
+                            <img src="{% static 'img/blog/cat-post/cat-post-3.jpg' %}" alt="post">
+                            <div class="categories_details">
+                                <div class="categories_text">
+                                    <a href="http://127.0.0.1:8000/srd/"><h5>Storage Devices</h5></a>
+                                    <div class="border_line"></div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+<div><br><br></div>
+ <a class="btn btn-primary" onclick="scrollBy(0,500)">Search</a>
+
+
+
+
+                            <h2> <section class="product_area p_120">
+            <div class="container" align="center">
+
+
+                    <div class="col-lg-9" align="center">
+                        <form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+
+                            <div class="col-md-6">
+
+
+
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section></h2>
+
+
+					</div>
+				</div>
+            </div>
+        </section>
+        <!--================End Home Banner Area =================-->
+
+        <!--================Blog Categorie Area =================-->
+        <section class="blog_categorie_area">
+            <h2 align="center">Categories</h2>
+.            <div class="container">
+            <form  method="post" >
+                                          {% csrf_token %}
+                                        <div align="center" class="form-group">
+                                              <input type="text" name="search" class="form-control" placeholder="Search Products">
+                                        </div>
+
+                                        <div align="center" ="form-group">
+                                 <input align="center" type="submit"  class="btn btn-success" onclick="scrollBy(0,500)" value="Search">
+
+
+                            </div>
+
+
+
+                                    </form>
+             <div> <br>
+            <br></div>
+              <div>
+                                 <table align="center" cellpadding="40" cellspacing="70"   border="7">
+                <tr>
+
+                    <th>Name</th>
+                    <th>Model Name</th>
+                    <th>Brand Name</th>
+                    <th>Price</th>
+                </tr>
+                {% for pls in s %}
+                {% if pls.p_name == n %}
+
+                <tr>
+
+
+                    <td>{{pls.p_name}}</td>
+                    <td>{{pls.model_name}}</td>
+                    <td>{{pls.manfac}}</td>
+                    <td>{{pls.price}}</td>
+
+                </tr>
+                                        {% endif %}
+                {% endfor %}
+
+                </table>
+
+                            </div>
+
+            </div>
+
+
+        </section>
+        <!--================Blog Categorie Area =================-->
+
+
+        <!--================Blog Area =================-->
+
+
+		<!--================ End footer Area  =================-->
+
+
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="{% static 'img/blog/cat-post/cat-post-3.jpg' %}"js/jquery-3.2.1.min.js"></script>
+        <script src="{% static 'img/blog/cat-post/cat-post-3.jpg' %}"js/popper.js"></script>
+        <script src="{% static 'img/blog/cat-post/cat-post-3.jpg' %}"js/bootstrap.min.js"></script>
+        <script src="{% static 'img/blog/cat-post/cat-post-3.jpg' %}"js/stellar.js"></script>
+        <script src="{% static 'img/blog/cat-post/cat-post-3.jpg' %}"vendors/lightbox/simpleLightbox.min.js"></script>
+        <script src="{% static 'img/blog/cat-post/cat-post-3.jpg' %}"vendors/nice-select/js/jquery.nice-select.min.js"></script>
+        <script src="{% static 'img/blog/cat-post/cat-post-3.jpg' %}"vendors/isotope/imagesloaded.pkgd.min.js"></script>
+        <script src="{% static 'img/blog/cat-post/cat-post-3.jpg' %}"vendors/isotope/isotope-min.js"></script>
+        <script src="{% static 'vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+        <script src="{% static 'js/mail-script.js' %}"></script>
+        <script src="{% static 'vendors/counter-up/jquery.waypoints.min.js' %}"></script>
+        <script src="{% static 'vendors/counter-up/jquery.counterup.js' %}"></script>
+        <script src="{% static 'js/theme.js' %}"></script>
+    </body>
+</html>

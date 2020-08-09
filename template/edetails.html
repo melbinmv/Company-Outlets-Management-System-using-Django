@@ -1,0 +1,279 @@
+{% load static from staticfiles %}
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/png">
+        <title>Registration Employee</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors/linericon/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors/owl-carousel/owl.carousel.min.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors/lightbox/simpleLightbox.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors/nice-select/css/nice-select.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors/animate-css/animate.css' %}">
+        <!-- main css -->
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    </head>
+    <body>
+
+        <!--================Header Menu Area =================-->
+        <header class="header_area">
+            <div class="main_menu">
+            	<nav class="navbar navbar-expand-lg navbar-light">
+					<div class="container box_1620">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<!--<a class="navbar-brand logo_h" href="{% static 'index.html' %}">-->
+                            <h5><a href="http://127.0.0.1:8000/home/"><font color="white">Home</font> </a></h5>
+
+                            <!--<img src="{% static 'img/logo.png' %}" alt=""></a>-->
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+							<ul class="nav navbar-nav menu_nav ml-auto">
+								                                <li class="nav-item submenu dropdown">
+									<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Registration</a>
+									<ul class="dropdown-menu">
+										<li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/register/">Branch</a></li>
+
+										<li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/emp/">Employees</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/branchall/">Manage Branches</a></li>
+									</ul>
+								</li>
+
+								<li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/product/">Products</a></li>
+                                  <li class="nav-item submenu dropdown">
+									<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Employees</a>
+									<ul class="dropdown-menu">
+										<li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/viewemp">Manage</a></li>
+										<li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/searchemp/">Search</a></li>
+									</ul>
+								</li>
+
+
+								</li>
+
+
+								<li class="nav-item submenu dropdown">
+									<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Stock</a>
+									<ul class="dropdown-menu">
+										<li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/admin_stockview">Manage</a></li>
+										<li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/reqstview/">Stock Requests</a></li>
+									</ul>
+								</li>
+                                <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/logout/">Logout</a>
+							</
+
+
+							</ul>
+
+						</div>
+					</div>
+            	</nav>
+            </div>
+        </header>
+        <!--================Header Menu Area =================-->
+
+        <!--================Home Banner Area =================-->
+        <section class="banner_area">
+            <div class="banner_inner d-flex align-items-center">
+            	<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+				<div class="container">
+					<div class="banner_content text-center">
+
+						<h2>Registration</h2>
+					</div>
+				</div>
+            </div>
+        </section>
+        <!--================End Home Banner Area =================-->
+
+        <!--================Contact Area =================-->
+        <form method="post" action="{% url 'empdetails' %}">
+
+            {% csrf_token %}
+
+        <section class="contact_area p_120">
+
+            <!--<div class="container">-->
+
+
+                    <div class="col-lg-9" align="center">
+                        <form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+
+
+                            <div class="col-md-6">
+
+                    <!--<div class="container">-->
+                        <!--<form>-->
+                             <div align="left">
+                                    <label><h6>Branch</h6></label>
+                                </div>
+                                 <div class="form-group">
+                                <select  name="out">
+        {% for pls in s %}
+        <option value="{{pls.id}}">{{pls.b_name}}</option>
+        {% endfor %}
+    </select>
+    </div>
+
+                        <!--</form>-->
+                    <!--</div>-->
+                                <div>
+                                    <br>
+                                    <br>
+
+                                </div>
+
+                                <!--<div class="form-group">-->
+                                    <!--<input type="text" class="form-control" id="bid" name="out" placeholder="Branch Name">-->
+                                <!--</div>-->
+
+                                 <div align="left">
+                                    <label><h6>Name</h6></label>
+                                </div>
+                                 <div class="form-group">
+
+                                    <input type="text" class="form-control" id="b_name" name="name" placeholder="Employee Name" required>
+
+                                </div>
+                                 <div align="left">
+                                    <label><h6>Date Of Birth</h6></label>
+                                </div>
+                                 <div class="form-group">
+
+                                    <input type="date" class="form-control" id="db" name="dob" placeholder="Date of Birth" required>
+
+                                </div>
+
+                                <div align="left">
+                                    <label><h6>Gender</h6></label>
+                                </div>
+                                <div class ="form-group" align="left">
+                      <input type="radio" name="gender" value="male">Male<br>
+
+                       <input type="radio" name="gender" value="female">Female<br>
+                                </div>
+                                 <div align="left">
+                                    <label><h6>Address</h6></label>
+                                </div>
+                                   <div class="form-group">
+
+                                     <textarea class="form-control" id="add" name="address" rows="3" placeholder="Address of Communication" required></textarea>
+
+                                </div>
+                                <div align="left">
+                                    <label><h6>Town/City</h6></label>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="twn" name="town" placeholder="Town/City" required>
+                                </div>
+                                <div align="left">
+                                    <label><h6>District</h6></label>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="dis" name="dist" placeholder="District" required>
+                                </div>
+                                 <div align="left">
+                                     <div align="left">
+                                    <label><h6>E-mail</h6></label>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="email" name="mail" placeholder="Email Address" required>
+                                </div>
+                                    <label><h6>Mobile Number</h6></label>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="b_loc" pattern="[0-9]{10}" name="phn" placeholder="Mobile Number" required>
+                                </div>
+
+
+
+                            <div class ="form-group">
+                                 <input type="submit"  class="btn btn-success" value="Register">
+
+
+                            </div>
+
+
+                        </form>
+                    <!--</div>-->
+                </div>
+            </div>
+        </section>
+        <!--================Contact Area =================-->
+
+
+		<!--================ End footer Area  =================-->
+
+        <!--================Contact Success and Error message Area =================-->
+        <div id="success" class="modal modal-message fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <i class="fa fa-close"></i>
+                        </button>
+                        <h2>Thank you</h2>
+                        <p>Your message is successfully sent...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modals error -->
+
+        <div id="error" class="modal modal-message fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <i class="fa fa-close"></i>
+                        </button>
+                        <h2>Sorry !</h2>
+                        <p> Something went wrong </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--================End Contact Success and Error message Area =================-->
+
+
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+        <script src="{% static 'js/popper.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/stellar.js' %}"></script>
+        <script src="{% static 'vendors/lightbox/simpleLightbox.min.js' %}"></script>
+        <script src="{% static 'vendors/nice-select/js/jquery.nice-select.min.js' %}"></script>
+        <script src="{% static 'vendors/isotope/imagesloaded.pkgd.min.js' %}"></script>
+        <script src="{% static 'vendors/isotope/isotope-min.js' %}"></script>
+        <script src="{% static 'vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+        <script src="{% static 'js/mail-script.js' %}"></script>
+        <script src="{% static 'vendors/counter-up/jquery.waypoints.min.js' %}"></script>
+        <script src="{% static 'vendors/counter-up/jquery.counterup.js' %}"></script>
+        <!-- contact js -->
+        <script src="{% static 'js/jquery.form.js' %}"></script>
+        <script src="{% static 'js/jquery.validate.min.js' %}"></script>
+        <script src="{% static 'js/contact.js' %}"></script>
+        <!--gmaps Js-->
+        <script src="{% static 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE' %}"></script>
+        <script src="{% static 'js/gmaps.min.js' %}"></script>
+        <script src="{% static 'js/theme.js' %}"></script>
+    </body>
+</html>

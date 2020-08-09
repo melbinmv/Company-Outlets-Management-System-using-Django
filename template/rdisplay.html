@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Display</title>
+</head>
+<body>
+<form method="post" action="{% url 'display' %}" >
+     {% csrf_token %}
+
+
+    <select name="sam">
+        {% for pls in s %}
+        <option value="{{pls.id}}">{{pls.b_name}}</option>
+        {% endfor %}
+    </select>
+<!--<input type="number" id="nm" name="num" value="{{pls.id}}">-->
+<!--<input type="text" id="nam" name="nam" value="{{pls.name}}">-->
+
+
+
+
+
+</form>
+
+
+</body>
+</html>

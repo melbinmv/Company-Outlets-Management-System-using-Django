@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="{% url 'registration' %}">
+    <div class="container">
+           <div class="col-10">
+                <h3>REGISTRATION</h3>
+            </div>
+           {% csrf_token %}
+            <div class="col-7">
+                <font size="4">
+
+                <label>Branch Id</label>
+                <input class="form-control" type="text" name="branchid"  required>
+                <br>
+                <label>Branch Name</label>
+                <input class="form-control" type="text" name="branchname" required>
+                <br>
+                <label>Location</label>
+                <input class="form-control" type="text" name="location" required>
+                <br>
+                <label>Phone Number</label>
+                <input class="form-control" type="number" name="phone" required>
+                <br>
+                 <label>Email</label>
+                <input class="form-control" type="email" name="email" required>
+                <br>
+                 <label>Password</label>
+                <input class="form-control" type="password" name="password" required>
+                </font>
+            </div>
+       <div class="col-12">
+           <input type="submit"  class="btn btn-success" value="Submit">
+        <input type="reset" class="btn btn-reset" value="Cancel">
+       </div>
+    </div>
+</form>
+</body>
+</html>
